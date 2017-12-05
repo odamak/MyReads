@@ -2,6 +2,7 @@ import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 import ListBookShelfs from './ListBookShelfs'
+import SearchBooksBar from './SearchBooksBar'
 
 const bookshelfs = [
     {
@@ -77,14 +78,19 @@ const bookshelfs = [
 
 class BooksApp extends React.Component {
 
-  render() {
-    return (
-      <div>
-      <ListBookShelfs bookshelfs = {bookshelfs} />
-      </div>
-      )
+    state = {
+        showSearchPage: false
+    }
 
-}
+    render() {
+        return (
+          <div>
+          <SearchBooksBar />
+          <ListBookShelfs bookshelfs = {bookshelfs} />
+          </div>
+          )
+
+    }
 }
 
 export default BooksApp

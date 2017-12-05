@@ -3,6 +3,11 @@ import React from 'react'
 function ListBookShelfs (props) {
         //console.log('Props', this.props)
         return(
+            <div className="list-books">
+              <div className="list-books-title">
+               <h1>MyReads</h1>
+              </div>
+            <div className="list-books-content">
             <div>
             { props.bookshelfs.map((bookshelf) => (
 
@@ -36,6 +41,8 @@ function ListBookShelfs (props) {
             </div>
 
             ))}
+            </div>
+            </div>
             </div>
             )
 
