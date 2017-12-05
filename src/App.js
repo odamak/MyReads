@@ -4,7 +4,11 @@ import './App.css'
 import ListBookShelfs from './ListBookShelfs'
 import SearchBooksBar from './SearchBooksBar'
 
-const bookshelfs = [
+
+class BooksApp extends React.Component {
+
+    state = {
+ bookshelfs : [
     {
         "id": 1,
         "title": "Currently Reading",
@@ -75,18 +79,13 @@ const bookshelfs = [
                  ]
     }
 ]
-
-class BooksApp extends React.Component {
-
-    state = {
-        showSearchPage: false
-    }
+}
 
     render() {
         return (
           <div>
           <SearchBooksBar />
-          <ListBookShelfs bookshelfs = {bookshelfs} />
+          <ListBookShelfs bookshelfs = {this.state.bookshelfs} />
           </div>
           )
 
