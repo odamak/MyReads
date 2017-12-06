@@ -1,6 +1,17 @@
 import React from 'react'
 
+
+
 function ListBookShelfs (props) {
+
+  const bookOptions=[
+          {value: 'none', text: 'Move to...'},
+          {value: 'currentlyReading', text: 'Currently Reading'},
+          {value: 'wantToRead', text: 'Want to Read'},
+          {value: 'read', text: 'Read'},
+          {value: 'none', text: 'None'}
+        ]
+
         //console.log('Props', this.props)
         return(
             <div className="list-books">
@@ -21,6 +32,15 @@ function ListBookShelfs (props) {
                               <div className="book-top">
                                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.url})` }}></div>
                                 <div className="book-shelf-changer">
+                                  <script type="text/javascript">
+                                    //find a way to give id to this select
+                                  </script>
+                                  <select id={'select'+book.id} onChange={() => props.onChangeBookshelf(book) }>
+                                    {bookOptions.map((option) => (
+                                      <option value={option.value}>{option.text}</option>
+                                    ))}
+                                  </select>
+                                  {/*
                                   <select>
                                     <option value="none" disabled>Move to...</option>
                                     <option value="currentlyReading">Currently Reading</option>
@@ -28,6 +48,7 @@ function ListBookShelfs (props) {
                                     <option value="read">Read</option>
                                     <option value="none">None</option>
                                   </select>
+                                  */}
                                 </div>
                               </div>
                               <div className="book-title">{book.title}</div>

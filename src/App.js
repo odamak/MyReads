@@ -81,11 +81,27 @@ class BooksApp extends React.Component {
 ]
 }
 
+changeBookshelf = (book) => {
+    console.log("click on Book with book id "+book.id);
+}
+
+/*Model to follow
+removeContact = (contact) => {
+       this.setState((state) => ({
+           contacts: state.contacts.filter((c) => c.id !== contact.id)
+
+       }) )
+
+   }
+*/
+
     render() {
         return (
           <div>
           <SearchBooksBar />
-          <ListBookShelfs bookshelfs = {this.state.bookshelfs} />
+          <ListBookShelfs onChangeBookshelf = {this.changeBookshelf}
+                          bookshelfs = {this.state.bookshelfs}
+          />
           </div>
           )
 
